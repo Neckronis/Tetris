@@ -107,9 +107,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factory.cs" />
+    <Compile Include="Grid.cs" />
+    <Compile Include="MediaManager.cs" />
+    <Compile Include="PlayManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="TetrisFacade.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

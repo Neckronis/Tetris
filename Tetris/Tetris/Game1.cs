@@ -18,6 +18,7 @@ namespace Tetris
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        TetrisFacade tetrisFacade;
 
         public Game1()
         {
@@ -34,8 +35,10 @@ namespace Tetris
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
             base.Initialize();
+            MediaManager.Initialize(Content);
+            Factory factory = new Factory(12, 20);
+            tetrisFacade = new TetrisFacade(factory);
         }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace Tetris
                 this.Exit();
 
             // TODO: Add your update logic here
+            tetrisFacade.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -84,6 +88,9 @@ namespace Tetris
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            spriteBatch.Begin();
+            tetrisFacade.Draw(spriteBatch, gameTime);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }

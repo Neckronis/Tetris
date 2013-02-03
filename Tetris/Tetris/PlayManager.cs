@@ -10,10 +10,11 @@ namespace Tetris
     class PlayManager
     {
         Grid playingGrid;
+        List<Block> Blocks = new List<Block>();
 
         public PlayManager(Grid playingGrid)
         {
-            this.playingGrid = playingGrid;
+            this.playingGrid = playingGrid;         
         }
 
         public void Update(GameTime gameTime)
